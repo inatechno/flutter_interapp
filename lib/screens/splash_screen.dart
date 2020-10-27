@@ -1,7 +1,5 @@
-
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_app_intermediate/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -27,7 +25,7 @@ class SplashLoadingScreen extends StatelessWidget {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     bool sesi = (preferences.getBool("sesi") ?? false);
     if (sesi == true) {
-      // Navigator.pushReplacementNamed(context, HalamanChat.id);
+      Navigator.pushReplacementNamed(context, MenuScreen.id);
     } else {
       Navigator.pushReplacementNamed(context, AuthScreen.id);
     }

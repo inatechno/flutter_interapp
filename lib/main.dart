@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_intermediate/screens/auth_screen.dart';
 import 'package:flutter_app_intermediate/screens/device_screen.dart';
@@ -12,7 +13,9 @@ import 'package:flutter_app_intermediate/screens/splash_screen.dart';
 import 'arguments/adaptive_argument.dart';
 import 'screens/adaptive_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

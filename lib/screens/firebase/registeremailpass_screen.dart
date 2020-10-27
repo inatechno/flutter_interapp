@@ -9,11 +9,12 @@ import 'loginemailpass_screen.dart';
 class RegisterEmailPassScreen extends StatefulWidget {
   static String id = "registeremailpass";
   @override
-  _RegisterEmailPassScreenState createState() => _RegisterEmailPassScreenState();
+  _RegisterEmailPassScreenState createState() =>
+      _RegisterEmailPassScreenState();
 }
 
 class _RegisterEmailPassScreenState extends State<RegisterEmailPassScreen> {
- FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
   String email, password;
   bool loading;
   @override
@@ -25,7 +26,12 @@ class _RegisterEmailPassScreenState extends State<RegisterEmailPassScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              FlutterLogo(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: FlutterLogo(
+                  size: 80,
+                ),
+              ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {

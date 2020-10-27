@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_intermediate/screens/device_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginbygoogle_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginbyphone_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginemailpass_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/registeremailpass_screen.dart';
+import 'package:flutter_app_intermediate/screens/mysql/loginmysql_screen.dart';
+import 'package:flutter_app_intermediate/screens/mysql/registermysql_screen.dart';
 
 import 'arguments/adaptive_argument.dart';
 import 'screens/adaptive_screen.dart';
@@ -43,7 +49,13 @@ class MyApp extends StatelessWidget {
       routes: {
         MenuScreen.id: (context) => MenuScreen(),
         DeviceScreen.id: (context) => DeviceScreen(),
-         AdaptiveScreen.id: (context) => AdaptiveScreen(),
+        AdaptiveScreen.id: (context) => AdaptiveScreen(),
+        LoginByGoogleScreen.id: (context) => LoginByGoogleScreen(),
+        LoginByPhoneScreen.id: (context) => LoginByPhoneScreen(),
+        LoginEmailPassScreen.id: (context) => LoginEmailPassScreen(),
+        RegisterEmailPassScreen.id: (context) => RegisterEmailPassScreen(),
+        LoginMysqlScreen.id: (context) => LoginMysqlScreen(),
+        RegisterMysql.id: (context) => RegisterMysql(),
       },
     );
   }

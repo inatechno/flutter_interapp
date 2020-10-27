@@ -31,6 +31,7 @@ dependencies:
   firebase_auth: ^0.18.1+2
   splashscreen: ^1.2.0
   shared_preferences: ^0.5.12
+  toast:
 
 dev_dependencies:
   flutter_test:

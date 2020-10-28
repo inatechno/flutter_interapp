@@ -1,10 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_intermediate/screens/auth_screen.dart';
 import 'package:flutter_app_intermediate/screens/device_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginbygoogle_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginbyphone_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/loginemailpass_screen.dart';
+import 'package:flutter_app_intermediate/screens/firebase/registeremailpass_screen.dart';
+import 'package:flutter_app_intermediate/screens/mysql/loginmysql_screen.dart';
+import 'package:flutter_app_intermediate/screens/mysql/registermysql_screen.dart';
+import 'package:flutter_app_intermediate/screens/splash_screen.dart';
 
 import 'arguments/adaptive_argument.dart';
 import 'screens/adaptive_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -39,11 +50,19 @@ class MyApp extends StatelessWidget {
           });
         }
       },
-      initialRoute: MenuScreen.id,
+      initialRoute: SplashLoadingScreen.id,
       routes: {
+        SplashLoadingScreen.id: (context) => SplashLoadingScreen(),
+        AuthScreen.id: (context) => AuthScreen(),
         MenuScreen.id: (context) => MenuScreen(),
         DeviceScreen.id: (context) => DeviceScreen(),
-         AdaptiveScreen.id: (context) => AdaptiveScreen(),
+        AdaptiveScreen.id: (context) => AdaptiveScreen(),
+        LoginByGoogleScreen.id: (context) => LoginByGoogleScreen(),
+        LoginByPhoneScreen.id: (context) => LoginByPhoneScreen(),
+        LoginEmailPassScreen.id: (context) => LoginEmailPassScreen(),
+        RegisterEmailPassScreen.id: (context) => RegisterEmailPassScreen(),
+        LoginMysqlScreen.id: (context) => LoginMysqlScreen(),
+        RegisterMysql.id: (context) => RegisterMysql(),
       },
     );
   }

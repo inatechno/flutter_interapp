@@ -143,6 +143,7 @@ class _LoginByPhoneScreenState extends State<LoginByPhoneScreen> {
     }
   }
 
+//test aja ya
   // Example code of how to sign in with phone.
   void _signInWithPhoneNumber(BuildContext c) async {
     try {
